@@ -48,9 +48,9 @@ Things you may want to cover:
 
 | Column                  | Type    | Options     |
 | ----------------------- | ------- | ----------- |
-| image                   | string  | null: false |
-| name                    | string  | null: false |
-| description             | string  | null: false |
+| image                   | text    | null: false |
+| name                    | text    | null: false |
+| description             | text    | null: false |
 | category                | integer | null: false |
 | status                  | integer | null: false |
 | delivery_change_burden  | integer | null: false |
