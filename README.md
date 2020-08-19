@@ -92,7 +92,7 @@ Things you may want to cover:
 | phone_number   | string     | null: false                    |
 
 
-- has_one :order
+- belongs_to :order
 - belongs_to_active_hash :prefecture
 
 
