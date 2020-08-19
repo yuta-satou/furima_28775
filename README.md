@@ -88,7 +88,7 @@ Things you may want to cover:
 | prefecture     | string     | null: false                    |
 | city           | string     | null: false                    |
 | block          | string     | null: false                    |
-| building_name  | string     | null: false                    |
+| building_name  | string     |                     |
 | phone_number   | integer    | null: false                    |
 
 
