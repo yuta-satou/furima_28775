@@ -54,6 +54,7 @@ Things you may want to cover:
 | category                | string  | null: false |
 | status                  | string  | null: false |
 | delivery_change_burden  | string  | null: false |
+| prefecture              | string  | null: false |
 | days_up_to_delivery     | string  | null: false |
 | price                   | integer | null: false |
 
