@@ -27,20 +27,21 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column       | Type   | Options     |
-| ------------ | ------ | ----------- |
-| nickname     | string | null: false |
-| email        | string | null: false |
-| password     | string | null: false |
-| prefecture   | string | null: false |
-| city         | string | null: false |
-| postal_code  | string | null: false |
-| phone_number | string | null: false |
+| Column            | Type   | Options     |
+| ----------------- | ------ | ----------- |
+| nickname          | string | null: false |
+| email             | string | null: false |
+| password          | string | null: false |
+| family_name       | string | null: false |
+| name              | string | null: false |
+| family_name_kana  | string | null: false |
+| name_kana         | string | null: false |
+| birthdate         | string | null: false |
 
 
 ### Association
 
-- has_many :items
+- has_many :order
 - has_many :messages
 
 ## items テーブル
@@ -54,79 +55,47 @@ Things you may want to cover:
 | status                  | string | null: false |
 | delivery_change_burden  | string | null: false |
 | days_up_to_delivery     | string | null: false |
+| price                   | string | null: false |
 
-- belongs_to :users
+
+
 - has_many :messages
-- has_many :delivery_charge_burden
-- has_many :categories
-- has_many :days_up_to_deliveries
-- has_many :status
-
+- has_one :order
 
 ## messages テーブル
 
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| coment        | text   | null: false |
-| checked       | string | null: false |
-| user          | string | null: false |
-| item          | string | null: false |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| coment        | text       | null: false                    |
+| checked       | string     | null: false                    |
+| user          | references | null: false, foreign_key: true |
+| item          | references | null: false, foreign_key: true |
 
 - be_longs_to :items
 - be_longs_to :users
 
 
+## address テーブル
 
-## category テーブル
-
-| Column        | Type   | Options     |
-| ------------- | ------ | ----------- |
-| category_name | string | null: false |
-| item          | string | null: false |
-
-- be_longs_to :items
-
-
-## prefectures テーブル
-
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| prefecture_name | string | null: false |
-
-- be_longs_to :items
-
-## status テーブル
-
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| status_name     | string | null: false |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| postal_code    | text       | null: false                    |
+| prefecture     | string     | null: false                    |
+| city           | string     | null: false                    |
+| block          | string     | null: false                    |
+| building_name  | string     | null: false                    |
+| phone_number   | integer    | null: false                    |
+| items          | references | null: false, foreign_key: true |
 
 - be_longs_to :items
 
 
-## prefectures テーブル
+## order テーブル
 
-| Column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| prefecture_name | string | null: false |
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| items   | references | null: false, foreign_key: true |
 
-- be_longs_to :items
-
-
-## days_up_to_deliveries テーブル
-
-| Column                   | Type   | Options     |
-| ------------------------ | ------ | ----------- |
-| days_up_to_delivery_name | string | null: false |
-
-- be_longs_to :items
-
-
-## delivery_charge_burden テーブル
-
-| Column                      | Type   | Options     |
-| --------------------------- | ------ | ----------- |
-| delivery_charge_burden_name | string | null: false |
-
-- be_longs_to :items
-
+belongs_to :items
+belongs_to :users
