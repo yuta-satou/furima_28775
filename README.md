@@ -58,6 +58,7 @@ Things you may want to cover:
 | days_up_to_delivery     | integer | null: false |
 | price                   | integer | null: false |
 
+### Association
 
 - has_many :messages
 - has_one :order
@@ -76,6 +77,8 @@ Things you may want to cover:
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
 
+### Association
+
 - be_longs_to :item
 - be_longs_to :user
 
@@ -91,6 +94,7 @@ Things you may want to cover:
 | building_name  | string     |                     |
 | phone_number   | string     | null: false                    |
 
+### Association
 
 - belongs_to :order
 - belongs_to_active_hash :prefecture
@@ -104,6 +108,8 @@ Things you may want to cover:
 | items   | references | null: false, foreign_key: true |
 | address | references | null: false, foreign_key: true |
 
+### Association
+
 belongs_to :item
 belongs_to :user
-belongs_to :address
+has_one    :address
