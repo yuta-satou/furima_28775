@@ -36,7 +36,7 @@ Things you may want to cover:
 | name              | string | null: false |
 | family_name_kana  | string | null: false |
 | name_kana         | string | null: false |
-| birthdate         | string | null: false |
+| birthdate         | date   | null: false |
 
 
 ### Association
