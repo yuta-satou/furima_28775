@@ -93,6 +93,7 @@ Things you may want to cover:
 
 
 - has_one :order
+- belongs_to_active_hash :prefecture
 
 
 ## order テーブル
