@@ -51,17 +51,21 @@ Things you may want to cover:
 | image                   | string  | null: false |
 | name                    | string  | null: false |
 | description             | string  | null: false |
-| category                | string  | null: false |
-| status                  | string  | null: false |
-| delivery_change_burden  | string  | null: false |
-| prefecture              | string  | null: false |
-| days_up_to_delivery     | string  | null: false |
+| category                | integer | null: false |
+| status                  | integer | null: false |
+| delivery_change_burden  | integer | null: false |
+| prefecture              | integer | null: false |
+| days_up_to_delivery     | integer | null: false |
 | price                   | integer | null: false |
-
 
 
 - has_many :messages
 - has_one :order
+- belongs_to_active_hash :category
+- belongs_to_active_hash :status
+- belongs_to_active_hash :delivery_change_burden
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :days_up_to_delivery
 
 ## messages テーブル
 
