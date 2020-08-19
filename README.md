@@ -91,10 +91,10 @@ Things you may want to cover:
 | Column         | Type       | Options                        |
 | -------------- | ---------- | ------------------------------ |
 | postal_code    | string     | null: false                    |
-| prefecture     | string     | null: false                    |
+| prefecture     | integer    | null: false                    |
 | city           | string     | null: false                    |
 | block          | string     | null: false                    |
-| building_name  | string     |                     |
+| building_name  | string     |                                |
 | phone_number   | string     | null: false                    |
 
 ### Association
@@ -109,7 +109,6 @@ Things you may want to cover:
 | ------- | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
 | items   | references | null: false, foreign_key: true |
-| address | references | null: false, foreign_key: true |
 
 ### Association
 
