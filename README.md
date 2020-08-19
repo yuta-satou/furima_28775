@@ -41,7 +41,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :order
+- has_many :orders
 - has_many :messages
 
 ## items テーブル
@@ -76,8 +76,8 @@ Things you may want to cover:
 | user          | references | null: false, foreign_key: true |
 | item          | references | null: false, foreign_key: true |
 
-- be_longs_to :items
-- be_longs_to :users
+- be_longs_to :item
+- be_longs_to :user
 
 
 ## address テーブル
@@ -96,7 +96,7 @@ Things you may want to cover:
 - belongs_to_active_hash :prefecture
 
 
-## order テーブル
+## orders テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
@@ -104,6 +104,6 @@ Things you may want to cover:
 | items   | references | null: false, foreign_key: true |
 | address | references | null: false, foreign_key: true |
 
-belongs_to :items
-belongs_to :users
+belongs_to :item
+belongs_to :user
 belongs_to :address
