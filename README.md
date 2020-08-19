@@ -43,6 +43,7 @@ Things you may want to cover:
 
 - has_many :orders
 - has_many :messages
+- has_many :items
 
 ## items テーブル
 
