@@ -46,16 +46,16 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column                  | Type   | Options     |
-| ----------------------- | ------ | ----------- |
-| items_image             | string | null: false |
-| items_name              | string | null: false |
-| items_description       | string | null: false |
-| category                | string | null: false |
-| status                  | string | null: false |
-| delivery_change_burden  | string | null: false |
-| days_up_to_delivery     | string | null: false |
-| price                   | string | null: false |
+| Column                  | Type    | Options     |
+| ----------------------- | ------- | ----------- |
+| items_image             | string  | null: false |
+| items_name              | string  | null: false |
+| items_description       | string  | null: false |
+| category                | string  | null: false |
+| status                  | string  | null: false |
+| delivery_change_burden  | string  | null: false |
+| days_up_to_delivery     | string  | null: false |
+| price                   | integer | null: false |
 
 
 
@@ -96,7 +96,7 @@ Things you may want to cover:
 | ------- | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
 | items   | references | null: false, foreign_key: true |
-| address   | references | null: false, foreign_key: true |
+| address | references | null: false, foreign_key: true |
 
 belongs_to :items
 belongs_to :users
