@@ -85,9 +85,9 @@ Things you may want to cover:
 | block          | string     | null: false                    |
 | building_name  | string     | null: false                    |
 | phone_number   | integer    | null: false                    |
-| items          | references | null: false, foreign_key: true |
 
-- be_longs_to :items
+
+- has_one :order
 
 
 ## order テーブル
@@ -96,6 +96,8 @@ Things you may want to cover:
 | ------- | ---------- | ------------------------------ |
 | user    | references | null: false, foreign_key: true |
 | items   | references | null: false, foreign_key: true |
+| address   | references | null: false, foreign_key: true |
 
 belongs_to :items
 belongs_to :users
+belongs_to :address
