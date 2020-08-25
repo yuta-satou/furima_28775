@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :name_kana,
             presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :email,
-            presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, uniqueness: true
+            presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :birthdate,
             presence: true
   validates :password,
