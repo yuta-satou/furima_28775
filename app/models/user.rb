@@ -7,6 +7,7 @@ class User < ApplicationRecord
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/
   NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
+  EMAIL_REGEX = /@.+/
   validates :nickname,
             presence: true
   validates :family_name,
@@ -23,5 +24,5 @@ class User < ApplicationRecord
             presence: true, length: { minimum: 6 }, format: { with: PASSWORD_REGEX }
   validates :password_confirmation,
             presence: true, length: { minimum: 6 }, format: { with: PASSWORD_REGEX }
-
+validates :email, presence: true, format: { with: EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 end
