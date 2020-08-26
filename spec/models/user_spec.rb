@@ -40,7 +40,7 @@ RSpec.describe User, type: :model do
       @user.password_confirmation = nil
       @user.valid?
       # binding.pry
-      # expect(@user.errors.full_messages).to include("Password confirmation can't be blank")
+      expect(@user.errors.full_messages).to include("Password confirmation can't be blank")
     end
     it 'passwordが6文字以下では登録できないこと' do
       @user.password = 'dhsd'

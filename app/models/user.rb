@@ -14,12 +14,11 @@ class User < ApplicationRecord
             presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :name_kana,
             presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
-  validates :email,
-            presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
   validates :birthdate,
             presence: true
   validates :password,
             presence: true, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
   validates :password_confirmation,
             presence: true, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+
 end
