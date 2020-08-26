@@ -4,21 +4,24 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
   # ユーザー情報の実装条件
+  NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/
+  NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
   validates :nickname,
             presence: true
   validates :family_name,
-            presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
+            presence: true, format: { with: NAME_REGEX }
   validates :name,
-            presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
+            presence: true, format: { with: NAME_REGEX }
   validates :family_name_kana,
-            presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+            presence: true, format: { with: NAME_KANA_REGEX }
   validates :name_kana,
-            presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+            presence: true, format: { with: NAME_KANA_REGEX }
   validates :birthdate,
             presence: true
   validates :password,
-            presence: true, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+            presence: true, length: { minimum: 6 }, format: { with: PASSWORD_REGEX }
   validates :password_confirmation,
-            presence: true, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
+            presence: true, length: { minimum: 6 }, format: { with: PASSWORD_REGEX }
 
 end
