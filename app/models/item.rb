@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  has_one_attached :image
   class Item < ApplicationRecord
     belongs_to :user
     extend ActiveHash::Associations::ActiveRecordExtensions
@@ -25,5 +26,6 @@ class Item < ApplicationRecord
     validates :days_up_to_delivery, presence: true
     validates :days_up_to_delivery_id, numericality: { other_than: 1 } 
   end
+  validates :price_id, presence: true
   
 end
