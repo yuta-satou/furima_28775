@@ -10,10 +10,6 @@ RSpec.describe Item, type: :model do
     it '全ての項目が存在すれば登録できること' do
       expect(@item).to be_valid
     end
-    it '全ての項目が存在すれば登録できること' do
-      @item.valid?
-      expect(@item).to be_valid
-    end
     it '商品名が存在すれば登録できること' do
       @item.name = nil
       @item.valid?
