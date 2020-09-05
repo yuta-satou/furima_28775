@@ -21,8 +21,8 @@ class Item < ApplicationRecord
       validates :prefecture_id
       validates :days_up_to_delivery_id 
     end
-    validates :price_id, numericality: { only_interger: true }, numericality: { greater_than_or_equal_to: 300 },
-    numericality: { less_than_or_equal_to: 9999999 },format: { with: PRICE_REGEX }
+    validates :price_id, numericality: { only_interger: true }
   end
-  
+  validates :price_id, numericality: { greater_than_or_equal_to: 300 }
+  validates :price_id, numericality: { less_than_or_equal_to: 9999999 },format: { with: PRICE_REGEX }
 end

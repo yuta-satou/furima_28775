@@ -21,29 +21,29 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Description can't be blank")
     end
     it 'カテゴリーが存在すれば登録できること' do
-      @item.category_id = nil
+      @item.category_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Category can't be blank")
+      expect(@item.errors.full_messages).to include("Category must be other than 0")
     end
     it '商品の状態が存在すれば登録できること' do
-      @item.status_id = nil
+      @item.status_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Status can't be blank")
+      expect(@item.errors.full_messages).to include("Status must be other than 0")
     end
     it '配送料の負担が存在すれば登録できること' do
-      @item.delivery_change_burden_id = nil
+      @item.delivery_change_burden_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Delivery change burden can't be blank")
+      expect(@item.errors.full_messages).to include("Delivery change burden must be other than 0")
     end
     it '発送元の地域が存在すれば登録できること' do
-      @item.prefecture_id = nil
+      @item.prefecture_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+      expect(@item.errors.full_messages).to include("Prefecture must be other than 0")
     end
     it '発送までの日数が存在すれば登録できること' do
-      @item.days_up_to_delivery_id = nil
+      @item.days_up_to_delivery_id = 0
       @item.valid?
-      expect(@item.errors.full_messages).to include("Days up to delivery can't be blank")
+      expect(@item.errors.full_messages).to include("Days up to delivery must be other than 0")
     end
     it '価格情報が存在すれば登録できること' do
       @item.price_id = nil
