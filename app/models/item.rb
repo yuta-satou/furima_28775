@@ -1,13 +1,11 @@
 class Item < ApplicationRecord
-  class Item < ApplicationRecord
-    belongs_to :user
-    extend ActiveHash::Associations::ActiveRecordExtensions 
-    belongs_to_active_hash :category 
-    belongs_to_active_hash :status
-    belongs_to_active_hash :delivery_change_burden
-    belongs_to_active_hash :prefecture
-    belongs_to_active_hash :days_up_to_delivery
-  end
+  belongs_to :user
+  extend ActiveHash::Associations::ActiveRecordExtensions 
+  belongs_to_active_hash :category 
+  belongs_to_active_hash :status
+  belongs_to_active_hash :delivery_change_burden
+  belongs_to_active_hash :prefecture
+  belongs_to_active_hash :days_up_to_delivery
   PRICE_REGEX = /\A[0-9]+\z/
   has_one_attached :image
   with_options presence: true do
