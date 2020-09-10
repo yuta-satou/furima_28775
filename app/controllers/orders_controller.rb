@@ -5,14 +5,19 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @item = Item.find(params[:item_id])
+    @order = Order.all
+    @order.each do |order|
+      if order.item.id == @item.id
+        return redirect_to root_path
+      end
+    end
     if user_signed_in?
-      @item = Item.find(params[:item_id])
       if current_user.id == @item.user_id
-        redirect_to root_path
+       return redirect_to root_path
       else
         @order = OrderAddress.new
-      end
-
+      end  
     else
       redirect_to new_user_session_path
     end
