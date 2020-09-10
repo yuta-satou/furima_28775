@@ -1,7 +1,7 @@
 class OrderAddress
 
   include ActiveModel::Model
-  attr_accessor :postal_code, :prefecture_id, :city, :block, :building_name, :phone_number, :order_id, :user_id,:item_id
+  attr_accessor :postal_code, :prefecture_id, :city, :block, :building_name, :phone_number, :token, :order_id, :user_id,:item_id
   
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
