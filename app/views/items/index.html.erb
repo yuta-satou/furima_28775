@@ -133,7 +133,7 @@
             <%= link_to item_path(item.id), method: :get do %>
               <div class='item-img-content'>
                 <%= image_tag item.image, class: "item-img" %>
-                <% @order.each do |order|%>
+                <% @orders.each do |order|%>
                   <% if order.item_id == item.id %>
                     <div class='sold-out'>
                       <span>Sold Out!!</span>

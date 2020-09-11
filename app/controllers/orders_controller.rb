@@ -5,8 +5,8 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.all
-    @order.each do |order|
+    @orders = Order.all
+    @orders.each do |order|
       if order.item.id == @item.id
         return redirect_to root_path
       end
