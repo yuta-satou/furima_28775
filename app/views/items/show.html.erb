@@ -31,15 +31,8 @@
       <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
     <% end %>
 
-    <% @orders.each do |order|%>
-      <% if order.item_id != @item.id %>
-        <% @item_get = true %>
-      <% else %>
-        <% @item_get = false %>
-        <% break %>
-      <% end %>
-    <% end %>
-    <% if user_signed_in? && current_user.id != @item.user_id && @item_get %>
+    
+    <% if user_signed_in? && current_user.id != @item.user_id && @item.order == nil %>
       <%= link_to '購入画面に進む', new_item_order_path(@item.id) ,class:"item-red-btn"%>
     <% end %>
     <div class="item-explain-box">
