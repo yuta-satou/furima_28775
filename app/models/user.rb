@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable
+         has_many :items
+         has_many :orders
   # ユーザー情報の実装条件
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/
   NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/
