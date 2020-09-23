@@ -34,6 +34,8 @@ class ItemsController < ApplicationController
 
   def show
     @orders = Order.all
+    @messages = @item.message.includes(:user)
+    @message = Message.new
   end
 
   def destroy

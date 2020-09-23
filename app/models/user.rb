@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable
          has_many :items
          has_many :orders
+         has_many :messages
   # ユーザー情報の実装条件
   NAME_REGEX = /\A[ぁ-んァ-ン一-龥]+\z/
   NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/
